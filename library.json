@@ -1,0 +1,27 @@
+{
+  "name": "ESP UUID",
+  "keywords": "rng, random, uuid, esp, json, map",
+  "description": "A library to work with UUIDs on ESPs. Supports ArduinoJson and std::map.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/protohaus/ESP_UUID.git"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Moritz Ulmer",
+      "email": "moritz.ulmer@posteo.de",
+      "url": "https://www.protohaus.org",
+      "maintainer": true
+    }
+  ],
+  "version": "0.0.1",
+  "frameworks": "arduino",
+  "platforms": [
+    "espressif8266",
+    "espressif32"
+  ],
+  "dependencies": {
+    "bblanchon/ArduinoJson": "^6.17.3"
+  }
+}
