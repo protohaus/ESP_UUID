@@ -28,7 +28,7 @@ class UUID : public Printable {
   /**
    * Construct the UUID from the given string
    */
-  UUID(cosnt String& uuid);
+  UUID(const String& uuid);
 
   /**
    * Construct the UUID from the given JsonVariantConst as a string
