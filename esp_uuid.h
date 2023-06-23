@@ -28,7 +28,7 @@ class UUID : public Printable {
   /**
    * Construct the UUID from the given string
    */
-  UUID(String& uuid);
+  UUID(cosnt String& uuid);
 
   /**
    * Construct the UUID from the given JsonVariantConst as a string
@@ -76,7 +76,7 @@ class UUID : public Printable {
    * \param uuid The UUID in string form (Hex 8-4-4-4-12)
    * \return True if it is a valid UUID string
    */
-  bool fromString(String& uuid);
+  bool fromString(const String& uuid);
 
   /**
    * Clears the UUID and makes it invalid
