@@ -23,7 +23,7 @@ UUID::UUID(const JsonVariantConst& uuid) {
     return;
   }
 
-  fromString(uuid.as<char*>());
+  fromString(uuid.as<const char*>());
 }
 
 bool UUID::operator<(const UUID& rhs) const { return buffer_ < rhs.buffer_; }
