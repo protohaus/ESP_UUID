@@ -13,17 +13,17 @@ UUID::UUID() {
   buffer_[8] = (buffer_[8] & 0x3F) | 0x80;
 }
 
-UUID::UUID(String& uuid) : UUID(uuid.c_str()) {}
+UUID::UUID(const String& uuid) : UUID(uuid.c_str()) {}
 
 UUID::UUID(const char* uuid) { fromString(uuid); }
 
 UUID::UUID(const JsonVariantConst& uuid) {
-  if (uuid.isNull() || !uuid.is<char*>()) {
+  if (uuid.isNull() || !uuid.is<const char*>()) {
     clear();
     return;
   }
 
-  fromString(uuid.as<char*>());
+  fromString(uuid.as<const char*>());
 }
 
 bool UUID::operator<(const UUID& rhs) const { return buffer_ < rhs.buffer_; }
@@ -104,7 +104,7 @@ bool UUID::fromString(const char* uuid) {
   }
 }
 
-bool UUID::fromString(String& uuid) { return fromString(uuid.c_str()); }
+bool UUID::fromString(const String& uuid) { return fromString(uuid.c_str()); }
 
 void UUID::clear() {
   memset(buffer_.data(), 0,
